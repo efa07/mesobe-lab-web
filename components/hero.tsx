@@ -11,22 +11,11 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none" aria-hidden="true">
-        <div className="relative aspect-square w-[140vw] max-w-[1080px] sm:w-[125vw] md:w-[110vw] lg:w-[1080px]">
+        <div className="relative aspect-square  w-full">
           <Silk speed={5} scale={1} color="#7B7481" noiseIntensity={1.5} rotation={0} />
         </div>
       </div>
 
-      {/* Neon glow orbs */}
-      <div
-        className="absolute top-20 right-10 size-72 rounded-full opacity-20 blur-3xl animate-glow-pulse"
-        aria-hidden="true"
-        style={{ background: "oklch(0.75 0.18 55)" }}
-      />
-      <div
-        className="absolute bottom-10 left-10 size-48 rounded-full opacity-10 blur-3xl animate-glow-pulse"
-        aria-hidden="true"
-        style={{ background: "oklch(0.75 0.18 55)", animationDelay: "1.5s" }}
-      />
 
       <div ref={ref} className="relative z-10 mx-auto max-w-6xl px-6">
         <div className={`max-w-3xl transition-all duration-700 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
