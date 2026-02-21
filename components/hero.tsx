@@ -3,12 +3,19 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useAnimateOnScroll } from "@/hooks/use-animate-on-scroll"
+import Silk from "@/components/Silk"
 
 export function Hero() {
   const { ref, isVisible } = useAnimateOnScroll(0.1)
 
   return (
     <section className="relative pt-32 pb-24 md:pt-44 md:pb-32 overflow-hidden">
+      <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none" aria-hidden="true">
+        <div className="relative aspect-square w-[140vw] max-w-[1080px] sm:w-[125vw] md:w-[110vw] lg:w-[1080px]">
+          <Silk speed={5} scale={1} color="#7B7481" noiseIntensity={1.5} rotation={0} />
+        </div>
+      </div>
+
       {/* Neon glow orbs */}
       <div
         className="absolute top-20 right-10 size-72 rounded-full opacity-20 blur-3xl animate-glow-pulse"
@@ -21,7 +28,7 @@ export function Hero() {
         style={{ background: "oklch(0.75 0.18 55)", animationDelay: "1.5s" }}
       />
 
-      <div ref={ref} className="mx-auto max-w-6xl px-6">
+      <div ref={ref} className="relative z-10 mx-auto max-w-6xl px-6">
         <div className={`max-w-3xl transition-all duration-700 ${isVisible ? "animate-fade-up" : "opacity-0"}`}>
           <p className="text-sm font-medium tracking-widest uppercase text-primary drop-shadow-[0_0_8px_oklch(0.75_0.18_55/0.4)] mb-4">
             Software Development Agency
